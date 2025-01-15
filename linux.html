@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Commands Showcase</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #2c3e50;
+            padding: 15px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar a {
+            color: white;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #3498db;
+            color: white;
+            border-radius: 4px;
+        }
+        .content {
+            padding: 20px;
+            margin: 0 10px;
+        }
+        .command-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .command-section h2 {
+            font-size: 2rem;
+            color: #2980b9;
+        }
+        .command-section p, .command-section pre {
+            font-size: 1.1rem;
+            color: #34495e;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#sort">sort</a>
+        <a href="#awk">awk</a>
+        <a href="#sed">sed</a>
+        <a href="#cut">cut</a>
+        <a href="#tr">tr</a>
+        <a href="#echo">echo</a>
+        <a href="#export">export</a>
+        <a href="#history">history</a>
+        <a href="#rsync">rsync</a>
+        <a href="#screen">screen</a>
+        <a href="#uniq">uniq</a>
+    </div>
+
+    <div class="content">
+        <h1>Linux Commands Showcase</h1>
+        <p>Click on the commands above to learn more about them.</p>
+
+        <div id="sort" class="command-section">
+            <h2>sort</h2>
+            <p>Sort command is used to sort lines of text files.</p>
+            <h3>Purpose</h3>
+            <p>Sort lines of text files in ascending or descending order.</p>
+            <h3>Usage</h3>
+            <pre><code>sort [OPTION]... [FILE]...</code></pre>
+            <h3>Examples</h3>
+            <p>Sort a file in ascending order:</p>
+            <pre><code>sort filename.txt</code></pre>
+            <p>Sort a file in descending order:</p>
+            <pre><code>sort -r filename.txt</code></pre>
+ <h3>Illustration</h3>
+    <img src="sort.png.png" alt="Illustration of rsync command usage" style="max-width:40%; height:auto;">
+
+        </div>
+
+        <div id="awk" class="command-section">
+            <h2>awk</h2>
+            <p>awk is a powerful programming language for pattern scanning and processing.</p>
+            <h3>Purpose</h3>
+            <p>Process and analyze text files using patterns and actions.</p>
+            <h3>Usage</h3>
+            <pre><code>awk 'pattern { action }' filename</code></pre>
+            <h3>Examples</h3>
+            <p>Print the second column of a file:</p>
+            <pre><code>awk '{print $2}' filename.txt</code></pre>
+            <p>Print lines containing a specific word:</p>
+            <pre><code>awk '/word/' filename.txt</code></pre>
+ <h3>Illustration</h3>
+    <img src="awk.png.png" alt="Illustration of rsync command usage" style="max-width:40%; height:auto;">
+
+        </div>
+
+        <div id="sed" class="command-section">
+            <h2>sed</h2>
+            <p>sed is a stream editor for filtering and transforming text.</p>
+            <h3>Purpose</h3>
+            <p>Perform basic text transformations on an input stream (a file or input from a pipeline).</p>
+            <h3>Usage</h3>
+            <pre><code>sed [OPTION]... {script-only-if-no-other-script} [input-file]...</code></pre>
+            <h3>Examples</h3>
+            <p>Replace a word in a file:</p>
+            <pre><code>sed 's/oldword/newword/g' filename.txt</code></pre>
+            <p>Delete a line containing a specific word:</p>
+            <pre><code>sed '/word/d' filename.txt</code></pre>
+ <h3>Illustration</h3>
+    <img src="sed.png.png" alt="Illustration of rsync command usage" style="max-width:40%; height:auto;">
+
+        </div>
+
+        <div id="cut" class="command-section">
+            <h2>cut</h2>
+            <p>cut removes sections from each line of files.</p>
+            <h3>Purpose</h3>
+            <p>Remove sections from each line of files based on a delimiter or byte position.</p>
+            <h3>Usage</h3>
+            <pre><code>cut OPTION... [FILE]...</code></pre>
+            <h3>Examples</h3>
+            <p>Extract the first and third fields from a file:</p>
+            <pre><code>cut -f1,3 filename.txt</code></pre>
+            <p>Extract characters 1-10 from each line:</p>
+            <pre><code>cut -c1-10 filename.txt</code></pre>
+ <h3>Illustration</h3>
+    <img src="cut.png.png" alt="Illustration of rsync command usage" style="max-width:40%; height:auto;">
+
+        </div>
+
+        <div id="tr" class="command-section">
+            <h2>tr</h2>
+            <p>tr translates or deletes characters from a stream of text.</p>
+            <h3>Purpose</h3>
+            <p>Translate or delete characters from a stream of text based on specified sets.</p>
+            <h3>Usage</h3>
+            <pre><code>tr [OPTION]... SET1 [SET2]</code></pre>
+            <h3>Examples</h3>
+            <p>Translate lowercase to uppercase:</p>
+            <pre><code>tr 'a-z' 'A-Z'</code></pre>
+            <p>Delete specific characters:</p>
+            <pre><code>tr -d 'a-z'</code></pre>
+ <h3>Illustration</h3>
+    <img src="tr.png.png" alt="Illustration of rsync command usage" style="max-width:40%; height:auto;">
+
+        </div>
+
+        <div id="echo" class="command-section">
+            <h2>echo</h2>
+            <p>echo is used to display a line of text or the value of a variable.</p>
+            <h3>Purpose</h3>
+            <p>Display a line of text or the value of a variable.</p>
+            <h3>Usage</h3>
+            <pre><code>echo [OPTION] [STRING]</code></pre>
+            <h3>Examples</h3>
+            <p>Display a string:</p>
+            <pre><code>echo "Hello, World!"</code></pre>
+            <p>Display the value of an environment variable:</p>
+            <pre><code>echo $HOME</code></pre>
+ <h3>Illustration</h3>
+    <img src="echo.png.png" alt="Illustration of rsync command usage" style="max-width:40%; height:auto;">
+
+        </div>
+
+        <div id="export" class="command-section">
+            <h2>export</h2>
+            <p>export is used to set environment variables.</p>
+            <h3>Purpose</h3>
+            <p>Set environment variables that can be used by child processes.</p>
+            <h3>Usage</h3>
+            <pre><code>export VARIABLE_NAME="value"</code></pre>
+            <h3>Examples</h3>
+            <p>Set a new environment variable:</p>
+            <pre><code>export MY_VAR="Hello"</code></pre>
+            <p>Make the variable available to child processes:</p>
+            <pre><code>export PATH=$PATH:/new/path</code></pre>
+ <h3>Illustration</h3>
+    <img src="export.png.png" alt="Illustration of rsync command usage" style="max-width:40%; height:auto;">
+
+        </div>
+
+        <div id="history" class="command-section">
+            <h2>history</h2>
+            <p>history shows the history of commands entered in the current session.</p>
+            <h3>Purpose</h3>
+            <p>Display the command history.</p>
+            <h3>Usage</h3>
+            <pre><code>history [n]</code></pre>
+            <h3>Examples</h3>
+            <p>Display the last 10 commands:</p>
+            <pre><code>history 10</code></pre>
+ <h3>Illustration</h3>
+    <img src="history.png.png" alt="Illustration of rsync command usage" style="max-width:40%; height:auto;">
+
+        </div>
+
+        <div id="rsync" class="command-section">
+            <h2>rsync</h2>
+            <p>rsync is used for synchronizing files and directories between two locations.</p>
+            <h3>Purpose</h3>
+            <p>Synchronize files between local and remote systems.</p>
+            <h3>Usage</h3>
+            <pre><code>rsync [OPTION] SOURCE DEST</code></pre>
+            <h3>Examples</h3>
+            <p>Sync a directory to a remote server:</p>
+            <pre><code>rsync -av /local/dir user@remote:/remote/dir</code></pre>
+ <h3>Illustration</h3>
+    <img src="rsync.png.png" alt="Illustration of rsync command usage" style="max-width:40%; height:auto;">
+
+        </div>
+
+        <div id="screen" class="command-section">
+            <h2>screen</h2>
+            <p>screen is used to create and manage multiple terminal sessions.</p>
+            <h3>Purpose</h3>
+            <p>Manage multiple terminal sessions from a single window.</p>
+            <h3>Usage</h3>
+            <pre><code>screen</code></pre>
+            <h3>Examples</h3>
+            <p>Start a new screen session:</p>
+            <pre><code>screen</code></pre>
+            <p>Reattach to a screen session:</p>
+            <pre><code>screen -r</code></pre>
+<h3>Illustration</h3>
+    <img src="screen.png.png" alt="Illustration of screen command usage" style="max-width:40%; height:auto;">
+        </div>
+<div id="uniq" class="command-section">
+    <h2>uniq</h2>
+    <p><code>uniq</code> removes duplicate lines from a sorted file.</p>
+    <h3>Purpose</h3>
+    <p>Remove or report duplicate lines from a sorted file.</p>
+    <h3>Usage</h3>
+    <pre><code>uniq [OPTION]... [INPUT [OUTPUT]]</code></pre>
+    <h3>Examples</h3>
+    <p>Remove duplicate lines from a sorted file:</p>
+    <pre><code>uniq filename.txt</code></pre>
+    <p>Display only duplicate lines in a sorted file:</p>
+    <pre><code>uniq -d filename.txt</code></pre>
+    <p>Count occurrences of each line in a sorted file:</p>
+    <pre><code>uniq -c filename.txt</code></pre>
+    <h3>Illustration</h3>
+    <img src="uniq.png.png" alt="Illustration of uniq command usage" style="max-width:40%; height:auto;">
+</div>
+        </div>
+    </div>
+</body>
+</html>
